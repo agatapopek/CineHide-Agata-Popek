@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the best small arthouse cinema cafes in Gdańsk, where you can enjoy underrated films and sip on delicious drinks. Explore each cafe's menu, engage with the community, and check out the latest movies playing all in one cozy, vibrant space.">
+  
+  <!-- Title of the Webpage -->
+  <title>CineHide</title>
+
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="../STYLES/styles.css">
+  
+  <!-- Leaflet (Map) Stylesheet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  
+  <!-- External Scripts for Map -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <!-- Header Section with Navigation -->
+  <header class="navigation-container">
+    <nav class="navigation">
+      <!-- Burger Menu for Mobile View -->
+      <div class="burger-menu" id="burger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <!-- Main Navigation Links -->
+      <ul id="nav-links">
+        <li><a href="index.html" class="active-link">Home</a></li>
+        <li><a href="ticketvisit.html" class="link">Places to visit</a></li>
+        <li><a href="art-and-stories.html" class="link">Upcoming events</a></li>
+        <li><a href="about.html" class="link">Community</a></li>
+      </ul>
+
+      <!-- Logo for the Website -->
+      <a href="index.html" class="nav-logo">CineHide</a>
+
+      <!-- Profile Section -->
+      <div class="profile">
+        <a href="profile.html"><img src="../resources/profile icon.svg" class="profile" alt="Profile Icon"></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content of the Page -->
+  <main>
+    <!-- Hero Section: Introduction to the Website -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Where Art, Film, and Flavor Collide</h1>
+        <p>Discover intimate screenings, handcrafted brews, and a community built on the love of art and cinema.</p>
+        <button class="btn-primary">See places</button>
+      </div>
+      <div class="hero-image">
+        <picture>
+          <source srcset="../resources/kolopop.svg" media="(max-width: 768px)">
+          <img src="../resources/desktoppopcorn.svg" alt="Popcorn illustration">
+        </picture>
+      </div>
+    </section>
+
+    <!-- Info Section: Short Description About the Website -->
+    <section class="info">
+      <img src="../resources/KOLOGD.svg" alt="Gdańsk" class="info-image">
+      <p class="info-text">Discover intimate screenings, handcrafted brews, and a love for cinema—hidden in Gdańsk.</p>
+    </section>
+
+    <!-- discover Section: Show More Information About Different Categories -->
+    <section class="discover" id="testimonials">
+      <h2 class="discover-header">Discover more</h2>
+      <div class="discover-container">
+        <!-- discover Card 1: Places to Visit -->
+        <div class="discover-card">
+          <img src="../resources/coffee.svg" alt="Coffee icon"/>
+          <p class="user-name">PLACES TO VISIT</p>
+          <p class="discover-text">
+            Find cosy, hidden places to grab a coffee.
+          </p>
+          <button class="discover-button">see more</button>
+        </div>
+
+        <!-- discover Card 2: Upcoming Events -->
+        <div class="discover-card">
+          <img src="../resources/film.svg" alt="Film icon"/>
+          <p class="user-name">UPCOMING EVENTS</p>
+          <p class="discover-text">
+            See what screenings and other events are happening this week.
+          </p>
+          <button class="discover-button">see more</button>
+        </div>
+
+        <!-- discover Card 3: Community Engagement -->
+        <div class="discover-card">
+          <img src="../resources/man.svg" alt="Community icon"/>
+          <p class="user-name">COMMUNITY</p>
+          <p class="discover-text">
+            See opinions, share your own, and join the conversation.
+          </p>
+          <button class="discover-button">see more</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section: Display Location on a Map -->
+    <section class="map-container" id="tips">
+      <h3 class="location-text">Location</h3>
+      <div id="map" class="mapstyle"></div>
+    </section>
+  </main>
+
+  <!-- Footer Section: Contact and Navigation Links -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo and Links to Homepage and Log Out -->
+      <div class="logo-section">
+        <h1 class="logo">CineHide</h1>
+        <a href="#" class="home-link">home</a>
+        <a href="#" class="logout-link">log out</a>
+      </div>
+      
+      <!-- Footer Navigation Links -->
+      <nav class="footer-nav">
+        <a href="#">PLACES TO VISIT</a>
+        <a href="#">UPCOMING EVENTS</a>
+        <a href="#">COMMUNITY</a>
+        <a href="#">PROFILE</a>
+        <a href="#">MAP</a>
+      </nav>
+      
+      <!-- Newsletter Section for Updates -->
+      <div class="newsletter-section">
+        <p>Stay updated with the new events<br>with our <strong>NEWSLETTER!</strong></p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="email address" required>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External Scripts for Navigation, Map, and Footer -->
+  <script src="../nav.js"></script>
+  <script src="../map.js"></script>
+  <script src="../footer.js"></script>
+</body>
+</html>

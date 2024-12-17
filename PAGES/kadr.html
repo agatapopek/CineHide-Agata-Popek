@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page, seen in the browser tab -->
+    <title>W Starym Kadrze</title>
+
+    <!-- Meta description for search engines and preview -->
+    <meta name="description" content="Discover the best small arthouse cinema cafes in Gdańsk, where you can enjoy underrated films and sip on delicious drinks. Explore each cafe's menu, engage with the community, and check out the latest movies playing all in one cozy, vibrant space.">
+    
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="../STYLES/cafe.css">
+
+    <!-- Link to external Leaflet library for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Link to Leaflet JavaScript library for map functionality -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+    <!-- Header section containing the navigation -->
+    <header class="navigation-container">
+        <nav class="navigation">
+
+            <!-- Burger menu for mobile responsiveness -->
+            <div class="burger-menu" id="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- Navigation links (Home, Places to Visit, Upcoming Events, Community) -->
+            <ul id="nav-links">
+                <li><a href="index.html" class="link">Home</a></li>
+                <li><a href="ticketvisit.html" class="link">Places to Visit</a></li>
+                <li><a href="art-and-stories.html" class="link">Upcoming Events</a></li>
+                <li><a href="about.html" class="link">Community</a></li>
+            </ul>
+
+            <!-- Logo that links back to the homepage -->
+            <a href="index.html" class="nav-logo">CineHide</a>
+
+            <!-- Profile icon, links to user profile page -->
+            <div class="profile">
+                <a href="profile.html">
+                    <img src="../resources/profile icon.svg" alt="Profile Icon" class="profile">
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+
+<main>
+
+<!-- Hero Section: Main introduction and social links -->
+<section class="hero">
+    <!-- Hero Text Block: Contains the main heading and social media links -->
+    <div class="hero-text">
+      <!-- Main Heading: Title of the section -->
+      <h1>W Starym Kadrze</h1>
+  
+      <!-- Social Media Links: List of social media icons -->
+      <div class="social-icons">
+        <!-- Facebook Link -->
+        <a href="https://www.facebook.com/WStarymKadrzeGdansk/" target="_blank" aria-label="Facebook">
+          <img src="../resources/FACEBOOK.svg" alt="Facebook Icon">
+        </a>
+  
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/wstarymkadrze/" target="_blank" aria-label="Instagram">
+          <img src="../resources/instagram.svg" alt="Instagram Icon">
+        </a>
+  
+        <!-- TikTok Link -->
+        <a href="https://www.tiktok.com/@wstarymkadrze" target="_blank" aria-label="TikTok">
+          <img src="../resources/tiktok.svg" alt="TikTok Icon">
+        </a>
+  
+        <!-- Website Link -->
+        <a href="https://wstarymkadrze.pl/" target="_blank" aria-label="Website">
+          <img src="../resources/web.svg" alt="Website Icon">
+        </a>
+      </div>
+    </div>
+  
+    <!-- Hero Image Block: Contains a responsive image for different screen sizes -->
+    <div class="hero-image">
+      <picture>
+        <!-- Mobile Image: Displayed on smaller screens (max-width: 768px) -->
+        <source srcset="../resources/elipsemobile.svg" media="(max-width: 768px)">
+        
+        <!-- Default Image: Displayed on larger screens -->
+        <img src="../resources/elipse.svg" alt="Popcorn illustration">
+      </picture>
+    </div>
+  </section>
+  
+  <!-- Cafe Information Section: Displays ratings and pricing information -->
+  <section class="cafe-info">
+    <!-- Crowd Rating Image -->
+    <img class="crowd" src="../RESOURCES/CROWD RATING.svg" alt="Crowd rating">
+    
+    <!-- Coffee Rating Image -->
+    <img class="cafe-rating" src="../RESOURCES/stars.svg" alt="Coffee rating">
+    
+    <!-- Pricing Information -->
+    <p>
+      <!-- First Dollar Sign: Represents a medium price range -->
+      <span class="first-dollar">$$</span><span class="second-dollar">$</span>
+    </p>
+  </section>
+  
+  <section class="repertoir">
+    <!-- Header for the section -->
+    <div class="header">
+        REPERTOIR
+    </div>
+
+    <!-- Container for the movie cards -->
+    <div class="movies" id="movies-container"></div>
+
+    <!-- Container for all the events -->
+    <div class="event-container">
+
+        <!-- Event list that will contain all movie cards -->
+        <div class="event-list">
+
+            <!-- Movie Card 1: CROSSING -->
+            <div class="event-card" 
+                data-title="CROSSING" 
+                data-director="Levan Akin" 
+                data-description="Retired Georgian teacher Lia travels to Istanbul with her much younger neighbor, Achim. Lia had promised her late sister that she would find her niece. The problem is that Tekla will most likely not want to return to their conservative homeland, where intolerance and transphobia remain significant issues."
+                data-image="../RESOURCES/crossing.jpg">
+                
+                <!-- Movie image -->
+                <img src="../RESOURCES/crossing.jpg" alt="Crossing">
+
+                <div class="event-info">
+                    <div class="title-container">
+                        <div class="title-director">
+                            <h2 class="title">CROSSING</h2>
+                            <p class="director">dir. Levan Akin</p>
+                        </div>
+                        <div class="star-image">
+                            <img src="../RESOURCES/stars.svg" alt="rating">
+                        </div>
+                    </div>
+
+                    <div class="time-container">
+                        <!-- Movie showtimes -->
+                        <div class="time">12:00</div>
+                        <div class="time">14:00</div>
+                        <div class="time">15:40</div>
+                        <div class="time">17:00</div>
+                        <div class="time">18:20</div>
+                        <div class="time">20:00</div>
+                    </div>
+
+                    <div class="movie-time-container">
+                        <!-- Movie duration and date -->
+                        <div class="movie-time">
+                            <img src="../RESOURCES/clock.svg" alt="clock icon">
+                            <p>106min</p>
+                        </div>
+                        <div class="movie-time">
+                            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                            <p>10 Dec 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="event-low">
+                        <!-- Button to get tickets -->
+                        <button class="get-tickets">get tickets</button>
+                        <h2>25.00zł</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Card 2: BIRDMAN -->
+            <div class="event-card"
+                data-title="BIRDMAN" 
+                data-director="Alejandro González" 
+                data-description="Birdman (2014) is a dark comedy-drama film directed by Alejandro González Iñárritu. It stars Michael Keaton as Riggan Thomson, a washed-up actor famous for playing the superhero Birdman years earlier. Struggling to regain his relevance, Riggan attempts to stage a Broadway play in a desperate effort to revitalize his career. The film explores themes of fame, identity, and artistic ambition, while being known for its illusion of being shot in one continuous take. It received critical acclaim and won several Academy Awards, including Best Picture." 
+                data-image="../RESOURCES/birdman.svg">
+                
+                <img src="../RESOURCES/birdman.svg" alt="Birdman">
+
+                <div class="event-info">
+                    <div class="title-container">
+                        <div class="title-director">
+                            <h2 class="title">BIRDMAN</h2>
+                            <p class="director">dir. Alejandro González</p>
+                        </div>
+                        <div class="star-image">
+                            <img src="../RESOURCES/stars.svg" alt="rating">
+                        </div>
+                    </div>
+
+                    <div class="time-container">
+                        <!-- Movie showtimes -->
+                        <div class="time">10:00</div>
+                        <div class="time">11:30</div>
+                        <div class="time">12:50</div>
+                        <div class="time">14:00</div>
+                        <div class="time">16:45</div>
+                        <div class="time">18:30</div>
+                    </div>
+
+                    <div class="movie-time-container">
+                        <!-- Movie duration and date -->
+                        <div class="movie-time">
+                            <img src="../RESOURCES/clock.svg" alt="clock icon">
+                            <p>119min</p>
+                        </div>
+                        <div class="movie-time">
+                            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                            <p>11 Dec 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="event-low">
+                        <!-- Button to get tickets -->
+                        <button class="get-tickets">get tickets</button>
+                        <h2>25.00zł</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Card 3: NOPE! -->
+            <div class="event-card"
+                data-title="NOPE!" 
+                data-director="Jordan Peele" 
+                data-description="NOPE (2022) is a science fiction horror film directed by Jordan Peele. The story follows siblings OJ and Emerald Haywood, played by Daniel Kaluuya and Keke Palmer, who run a horse ranch in California. They discover a mysterious UFO hovering above their land and attempt to capture footage of it, leading to a terrifying encounter with the unknown. The film blends horror, social commentary, and science fiction, exploring themes of spectacle, exploitation, and the human desire for fame. NOPE received praise for its unique storytelling, direction, and performances." 
+                data-image="../RESOURCES/NOPE!.svg">
+                
+                <img src="../RESOURCES/NOPE!.svg" alt="NOPE!">
+
+                <div class="event-info">
+                    <div class="title-container">
+                        <div class="title-director">
+                            <h2 class="title">NOPE!</h2>
+                            <p class="director">dir. Jordan Peele</p>
+                        </div>
+                        <div class="star-image">
+                            <img src="../RESOURCES/stars.svg" alt="rating">
+                        </div>
+                    </div>
+
+                    <div class="time-container">
+                        <!-- Movie showtimes -->
+                        <div class="time">11:20</div>
+                        <div class="time">13:30</div>
+                        <div class="time">14:40</div>
+                        <div class="time">16:00</div>
+                        <div class="time">18:00</div>
+                        <div class="time">20:00</div>
+                    </div>
+
+                    <div class="movie-time-container">
+                        <!-- Movie duration and date -->
+                        <div class="movie-time">
+                            <img src="../RESOURCES/clock.svg" alt="clock icon">
+                            <p>106min</p>
+                        </div>
+                        <div class="movie-time">
+                            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                            <p>12 Dec 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="event-low">
+                        <!-- Button to get tickets -->
+                        <button class="get-tickets">get tickets</button>
+                        <h2>25.00zł</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Card 4: SCARFACE -->
+            <div class="event-card"
+                data-title="SCARFACE" 
+                data-director="Brian De Palma" 
+                data-description="Scarface (1983) is a crime drama directed by Brian De Palma. It follows Tony Montana, a Cuban immigrant played by Al Pacino, who rises to power in the Miami drug trade. Through violence and ambition, Tony becomes a powerful drug lord, but his empire begins to crumble due to his reckless behavior and enemies. The film is known for its intense violence, memorable quotes, and Pacino's iconic performance. Scarface has become a cult classic over time, influencing popular culture and the gangster genre." 
+                data-image="../RESOURCES/SCARFACE.svg">
+                
+                <img src="../RESOURCES/SCARFACE.svg" alt="Scarface">
+
+                <div class="event-info">
+                    <div class="title-container">
+                        <div class="title-director">
+                            <h2 class="title">SCARFACE</h2>
+                            <p class="director">dir. Brian De Palma</p>
+                        </div>
+                        <div class="star-image">
+                            <img src="../RESOURCES/stars.svg" alt="rating">
+                        </div>
+                    </div>
+
+                    <div class="time-container">
+                        <!-- Movie showtimes -->
+                        <div class="time">12:00</div>
+                        <div class="time">14:00</div>
+                        <div class="time">15:40</div>
+                        <div class="time">17:00</div>
+                        <div class="time">18:20</div>
+                        <div class="time">20:00</div>
+                    </div>
+
+                    <div class="movie-time-container">
+                        <!-- Movie duration and date -->
+                        <div class="movie-time">
+                            <img src="../RESOURCES/clock.svg" alt="clock icon">
+                            <p>170min</p>
+                        </div>
+                        <div class="movie-time">
+                            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                            <p>13 Dec 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="event-low">
+                        <!-- Button to get tickets -->
+                        <button class="get-tickets">get tickets</button>
+                        <h2>25.00zł</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Card 5: HOME ALONE -->
+<div class="event-card"
+data-title="HOME ALONE" 
+data-director="Chris Columbus" 
+data-description="Home Alone (1990) is a family comedy film directed by Chris Columbus. It follows Kevin McCallister, an 8-year-old boy played by Macaulay Culkin, who is accidentally left behind when his family goes on vacation. Kevin must defend his home from two burglars, Harry and Marv, using a series of clever traps. The film is known for its humor, heartwarming moments, and Culkin's standout performance. Home Alone became a holiday classic and was followed by several sequels." 
+data-image="../RESOURCES/HOMEALONE.svg">
+
+<img src="../RESOURCES/HOMEALONE.svg" alt="Homealone">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">HOME ALONE</h2>
+            <p class="director">dir. Chris Columbus</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <div class="time">10:00</div>
+        <div class="time">11:30</div>
+        <div class="time">12:50</div>
+        <div class="time">14:00</div>
+        <div class="time">16:45</div>
+        <div class="time">18:30</div>
+    </div>
+
+    <div class="movie-time-container">
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>103min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>14 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <button class="get-tickets">get tickets</button>
+        <h2>25.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 6: THE BIRDS -->
+<div class="event-card"
+data-title="THE BIRDS" 
+data-director="Alfred Hitchcock" 
+data-description="The Birds (1963) is a horror-thriller film directed by Alfred Hitchcock. It tells the story of Melanie Daniels, played by Tippi Hedren, who travels to a small town in California where strange, aggressive bird attacks begin to occur. As the attacks escalate, the townspeople struggle to understand the cause and protect themselves. The film is known for its suspenseful atmosphere, innovative special effects, and Hitchcock's mastery in building tension. *The Birds* has become one of Hitchcock's most famous films and a landmark in the horror genre." 
+data-image="../RESOURCES/THE BIRDS.svg">
+
+<img src="../RESOURCES/THE BIRDS.svg" alt="The birds">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">THE BIRDS</h2>
+            <p class="director">dir. Alfred Hitchcock</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <div class="time">10:00</div>
+        <div class="time">11:40</div>
+        <div class="time">13:30</div>
+        <div class="time">15:20</div>
+        <div class="time">17:00</div>
+        <div class="time">19:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>163min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>15 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <button class="get-tickets">get tickets</button>
+        <h2>25.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 7: WESELE -->
+<div class="event-card"
+data-title="WESELE" 
+data-director="Jerzy Trela" 
+data-description="Wesele (The Wedding) is a play by Stanisław Wyspiański, performed at the Teatr Narodowy in Poland. It is set during a wedding celebration and brings together characters from different social backgrounds. The play addresses themes such as Polish national identity, the class divide, and the country's struggles for independence. Jerzy Trela's performance in the play is significant, adding depth to the characters and themes explored in the work. Wesele is considered one of the most important works in Polish literature and theater." 
+data-image="../RESOURCES/WESELE.svg">
+
+<img src="../RESOURCES/WESELE.svg" alt="Wesele">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">WESELE</h2>
+            <p class="director">dir. Jerzy Trela</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <div class="time">10:00</div>
+        <div class="time">11:20</div>
+        <div class="time">14:00</div>
+        <div class="time">16:30</div>
+        <div class="time">18:00</div>
+        <div class="time">20:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>190min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>16 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <button class="get-tickets">get tickets</button>
+        <h2>25.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 8: DZIADY -->
+<div class="event-card"
+data-title="DZIADY" 
+data-director="Eimuntas Nekrošius" 
+data-description="Dziady (Forefathers' Eve) is a dramatic work by Adam Mickiewicz, first performed in 1823. The play is divided into multiple parts, with the most famous being Part II and Part IV. It is set during a ritual called dziady, a traditional Polish ceremony where the living try to communicate with the spirits of the dead. The play explores themes of national identity, spirituality, and the oppression of the Polish people under foreign rule. It mixes folklore with romanticism and addresses the struggle for independence, the role of sacrifice, and the power of memory. The play is often considered one of the most important works in Polish literature and theater." 
+data-image="../RESOURCES/DZIADY.svg">
+
+<img src="../RESOURCES/DZIADY.svg" alt="Dziady">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">DZIADY</h2>
+            <p class="director">dir. Eimuntas Nekrošius</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <div class="time">12:00</div>
+        <div class="time">14:00</div>
+        <div class="time">15:40</div>
+        <div class="time">17:00</div>
+        <div class="time">18:20</div>
+        <div class="time">20:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>190min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>17 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <button class="get-tickets">get tickets</button>
+        <h2>25.00zł</h2>
+    </div>
+</div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- Popup Modal for showing more movie details -->
+    <div id="popup-box" class="popup hidden">
+        <div class="popup-content">
+            <span id="close-popup" class="close">&times;</span>
+            <img id="popup-image" src="" alt="Movie Image">
+            <div class="popup-description">
+                <h2 id="popup-title"></h2>
+                <p id="popup-director" class="popup-director"></p>
+                <p id="popup-desc" class="popup-desc"></p>
+            </div>
+            <div class="popup-footer">
+                <span id="popup-price">25.00zł</span>
+                <button class="get-tickets-pop">get tickets</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+  
+<section class="menu">
+<div class="menu-section">
+    <!-- Section heading for the menu -->
+    <h2>MENU</h2>
+
+    <!-- Menu container that holds all categories of items -->
+    <div class="menu-container">
+
+        <!-- Coffee category section -->
+        <details>
+            <!-- Summary of the category, that when clicked, reveals the list of drinks -->
+            <summary class="menu-title">Coffee</summary>
+            <ol class="list">
+                <!-- Each menu item listed with its name, description, and price -->
+                <li>
+                    <span class="drink-name"><strong>"Kiler"</strong> - espresso</span>
+                    <span class="dots"></span>
+                    <span class="price">9zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Chinatown"</strong> - cafe latte</span>
+                    <span class="dots"></span>
+                    <span class="price">15zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Fantomas"</strong> - mocha with whipped cream</span>
+                    <span class="dots"></span>
+                    <span class="price">21zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Rzym"</strong> - cappuccino</span>
+                    <span class="dots"></span>
+                    <span class="price">18zł</span>
+                </li>
+            </ol>
+        </details>
+
+        <!-- Hot chocolate category section -->
+        <details>
+            <summary class="menu-title">Hot chocolate</summary>
+            <ol class="list">
+                <li>
+                    <span class="drink-name"><strong>"Sklepy cynamonowe"</strong> - with cinnamon</span>
+                    <span class="dots"></span>
+                    <span class="price">19zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Czekoladowe lekcje"</strong> - with gingerbread</span>
+                    <span class="dots"></span>
+                    <span class="price">19zł</span>
+                </li>
+            </ol>
+        </details>
+
+        <!-- Tea category section -->
+        <details>
+            <summary class="menu-title">Tea</summary>
+            <ol class="list">
+                <li>
+                    <span class="drink-name"><strong>"Django"</strong> - black tea with rum</span>
+                    <span class="dots"></span>
+                    <span class="price">25zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Love actually"</strong> - strawberry tea</span>
+                    <span class="dots"></span>
+                    <span class="price">19zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Zielona mila"</strong> - mint tea</span>
+                    <span class="dots"></span>
+                    <span class="price">15zł</span>
+                </li>
+            </ol>
+        </details>
+
+        <!-- Breakfast category section -->
+        <details>
+            <summary class="menu-title">Breakfast</summary>
+            <ol class="list">
+                <li>
+                    <span class="drink-name"><strong>"Królowa"</strong> - english breakfast</span>
+                    <span class="dots"></span>
+                    <span class="price">40zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Chłopi"</strong> - polish breakfast</span>
+                    <span class="dots"></span>
+                    <span class="price">38zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Amélie"</strong> - croissant with jam and butter</span>
+                    <span class="dots"></span>
+                    <span class="price">23zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Pulp Fiction"</strong> - pancakes with syrup</span>
+                    <span class="dots"></span>
+                    <span class="price">30zł</span>
+                </li>
+            </ol>
+        </details>
+
+        <!-- Desserts category section -->
+        <details>
+            <summary class="menu-title">Desserts</summary>
+            <ol class="list">
+                <li>
+                    <span class="drink-name"><strong>"Ziemia obiecana"</strong> - apple pie</span>
+                    <span class="dots"></span>
+                    <span class="price">18zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Madagaskar"</strong> - chocolate lava cake</span>
+                    <span class="dots"></span>
+                    <span class="price">21zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Ziemia obiecana"</strong> - cheesecake</span>
+                    <span class="dots"></span>
+                    <span class="price">18zł</span>
+                </li>
+            </ol>
+        </details>
+
+        <!-- Alcohol category section -->
+        <details>
+            <summary class="last">Alcohol</summary>
+            <ol class="list">
+                <li>
+                    <span class="drink-name"><strong>"Mulled beer"</strong> - with orange</span>
+                    <span class="dots"></span>
+                    <span class="price">15zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"Mulled wine"</strong> - with orange</span>
+                    <span class="dots"></span>
+                    <span class="price">15zł</span>
+                </li>
+                <li>
+                    <span class="drink-name"><strong>"The Big Lebowski"</strong> - craft beer</span>
+                    <span class="dots"></span>
+                    <span class="price">18zł</span>
+                </li>
+            </ol>
+        </details>
+
+    </div>
+</div>
+</section>
+
+<section forum>
+<div class="forum">
+    <!-- Forum section with the title -->
+    <h2 class="forum-title">FORUM</h2>
+
+    <!-- The initial post input area where users can type their comments -->
+    <div class="post">
+        <p>WHAT DO YOU THINK?</p>
+        <!-- Image representing a rating, can be replaced with actual interactive elements later -->
+        <img src="../RESOURCES/zerorating1.svg" alt="rating">
+    </div>
+
+    <!-- Textarea for users to input their thoughts -->
+    <textarea id="forum-text" class="forum-text" placeholder="Share your thoughts..."></textarea>
+    <!-- Button to publish the comment (JavaScript can handle the publishing action) -->
+    <button id="publish">Publish</button>
+
+    <!-- Comments Section - Holds all user comments -->
+    <div class="comments-container">
+        <!-- New comment (start) -->
+        <div class="comment">
+            <!-- User's profile picture -->
+            <img src="../RESOURCES/Agata.jpg" alt="profile picture" class="profile-pic">
+            <div class="comment-content">
+                <!-- Commenter's name, review date, and location -->
+                <div>
+                    <p class="name">Agata Popek</p>
+                    <p class="review-date">11.10.2024</p>
+                    <p class="location">W starym Kadrze</p>
+                </div>
+                <!-- Rating stars given by the user -->
+                <div class="comment-rating">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <!-- Comment text (review) -->
+                <p class="comment-text">This spot has such an incredible vibe—it’s the perfect blend of cozy and fun! The coffee is top-notch, brewed to perfection with a variety of options to please any palate. The seating is super comfortable, creating a warm and inviting atmosphere that’s ideal for relaxing or catching up with friends. Plus, there’s a mini cinema right on site, making it a unique destination for a chill hangout or an unforgettable movie date. The snacks are just as delightful, with a great selection of tasty treats to pair with your drink or enjoy during the film. Whether you’re looking for a quiet corner to unwind or a fun space to make memories, this place truly has it all!</p>
+                <!-- 'See More' link to expand the comment -->
+                <a href="javascript:void(0);" class="see-more">see more</a>
+            </div>
+        </div>
+        <!-- Finished comment (end) -->
+
+        <!-- Another new comment (start) -->
+        <div class="comment">
+            <img src="../RESOURCES/PERSON.jpg" alt="profile picture" class="profile-pic">
+            <div class="comment-content">
+                <div>
+                    <p class="name">Kashika Ganguly</p>
+                    <p class="review-date">16.09.2024</p>
+                    <p class="location">W starym Kadrze</p>
+                </div>
+                <div class="comment-rating">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p class="comment-text">Checked out this cute little arthouse cinema café the other day. Love the vibe—super artsy and cozy, and they play the coolest indie movies. BUT... the food and drinks were kinda overpriced, and service was slow (maybe they were understaffed?). Still a cool spot to hang, just don’t go hungry!</p>
+                <a href="javascript:void(0);" class="see-more">see more</a>
+            </div>
+        </div>
+        <!-- Finished comment (end) -->
+
+        <!-- Hidden comments section - Initially hidden but can be revealed (for example, through a button) -->
+        <div class="hidden-comments">
+            <div class="comment">
+                <img src="../RESOURCES/profilepic.jpeg" alt="profile picture" class="profile-pic">
+                <div class="comment-content">
+                    <div>
+                        <p class="name">Brad Pitt</p>
+                        <p class="review-date">28.09.2024</p>
+                        <p class="location">W starym Kadrze</p>
+                    </div>
+                    <div class="comment-rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="comment-text">Had a great time at W Starym Kadrze! The combination of a cozy cafe and cinema is perfect for a relaxed night out. The coffee was delicious, and the menu had plenty of tasty options. The atmosphere was warm and inviting, with comfy seating and a great selection of films. My only complaint was that the sound quality in the cinema room could’ve been a bit better, but overall, it was a wonderful experience. I’ll definitely be back!</p>
+                    <a href="javascript:void(0);" class="see-more">see more</a>
+                </div>
+            </div>
+            <!-- More hidden comments can be added here -->
+        </div>
+
+        <!-- Button to see more posts (comments) -->
+        <p class="see-more-posts">see more</p>
+    </div>
+</div>
+</section>
+
+   <!-- Main content section with map -->
+<section class="info-container" id="tips">
+    <!-- Info Section -->
+    <h3 class="location-text">INFO</h3>
+    <div class="info">
+        <!-- Opening Hours -->
+        <h2 class="location-title">OPENING HOURS</h2>
+        <p>Monday/Friday: 10:00 - 18:00</p>
+        <p>Weekend: 10:00 - 21:00</p>
+
+        <!-- Location Address -->
+        <h2 class="location-title">LOCATION</h2>
+        <p>Lawendowa 2/3, 80-840 Gdańsk, Polska</p>
+    </div>
+    
+    <!-- Map container (will be styled and filled with map content) -->
+    <div id="map" class="mapstyle"></div>
+</section>
+</main>
+<!-- Footer section containing navigation and newsletter -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo Section with links to home and log out -->
+        <div class="logo-section">
+            <h1 class="logo">CineHide</h1>
+            <a href="#" class="home-link">Home</a>
+            <a href="#" class="logout-link">Log out</a>
+        </div>
+        
+        <!-- Footer Navigation Links -->
+        <nav class="footer-nav">
+            <a href="#">PLACES TO VISIT</a>
+            <a href="#">UPCOMING EVENTS</a>
+            <a href="#">COMMUNITY</a>
+            <a href="#">PROFILE</a>
+            <a href="#">MAP</a>
+        </nav>
+
+        <!-- Newsletter Subscription Section -->
+        <div class="newsletter-section">
+            <p>Stay updated with the new events<br>with our <span class="highlight">NEWSLETTER!</span></p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</footer>
+
+<!-- External JavaScript Files (for additional functionality) -->
+<script src="../nav.js"></script>
+<script src="../map-kadr.js"></script>
+<script src="../footer.js"></script>
+<script src="../see-more.js"></script>
+<script src="../pop-up.js"></script>
+
+</body>
+</html>
+

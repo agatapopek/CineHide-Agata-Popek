@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page, seen in the browser tab -->
+    <title>Kino Żak</title>
+
+    <!-- Meta description for search engines and preview -->
+    <meta name="description" content="Discover the best small arthouse cinema cafes in Gdańsk, where you can enjoy underrated films and sip on delicious drinks. Explore each cafe's menu, engage with the community, and check out the latest movies playing all in one cozy, vibrant space.">
+    
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="../STYLES/cafe.css">
+
+    <!-- Link to external Leaflet library for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Link to Leaflet JavaScript library for map functionality -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+    <!-- Header section containing the navigation -->
+    <header class="navigation-container">
+        <nav class="navigation">
+
+            <!-- Burger menu for mobile responsiveness -->
+            <div class="burger-menu" id="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- Navigation links (Home, Places to Visit, Upcoming Events, Community) -->
+            <ul id="nav-links">
+                <li><a href="index.html" class="link">Home</a></li>
+                <li><a href="ticketvisit.html" class="link">Places to Visit</a></li>
+                <li><a href="art-and-stories.html" class="link">Upcoming Events</a></li>
+                <li><a href="about.html" class="link">Community</a></li>
+            </ul>
+
+            <!-- Logo that links back to the homepage -->
+            <a href="index.html" class="nav-logo">CineHide</a>
+
+            <!-- Profile icon, links to user profile page -->
+            <div class="profile">
+                <a href="profile.html">
+                    <img src="../resources/profile icon.svg" alt="Profile Icon" class="profile">
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+    <!-- Hero Section: Main introduction and social links -->
+    <section class="hero">
+        <!-- Hero Text Block: Contains the main heading and social media links -->
+        <div class="hero-text">
+            <!-- Main Heading: Title of the section -->
+            <h1>Kino Żak</h1>
+        
+            <!-- Social Media Links: List of social media icons -->
+            <div class="social-icons">
+                <!-- Facebook Link -->
+                <a href="https://www.facebook.com/klubzak" target="_blank" aria-label="Facebook">
+                    <img src="../resources/FACEBOOK.svg" alt="Facebook Icon">
+                </a>
+        
+                <!-- Instagram Link -->
+                <a href="https://www.instagram.com/klubzak/?hl=pl" target="_blank" aria-label="Instagram">
+                    <img src="../resources/instagram.svg" alt="Instagram Icon">
+                </a>
+        
+                <!-- Website Link -->
+                <a href="https://klubzak.com.pl/" target="_blank" aria-label="Website">
+                    <img src="../resources/web.svg" alt="Website Icon">
+                </a>
+            </div>
+        </div>
+    
+        <!-- Hero Image Block: Contains a responsive image for different screen sizes -->
+        <div class="hero-image">
+            <picture>
+                <!-- Mobile Image: Displayed on smaller screens (max-width: 768px) -->
+                <source srcset="../resources/zakmobile1.svg" media="(max-width: 768px)">
+                
+                <!-- Default Image: Displayed on larger screens -->
+                <img src="../resources/zakdeksktop.svg" alt="Popcorn illustration">
+            </picture>
+        </div>
+    </section>
+    
+    <!-- Cafe Information Section: Displays ratings and pricing information -->
+    <section class="cafe-info">
+        <!-- Crowd Rating Image -->
+        <img class="crowd" src="../RESOURCES/fullcrowd.svg" alt="Crowd rating">
+        
+        <!-- Coffee Rating Image -->
+        <img class="cafe-rating" src="../RESOURCES/ratingzak.svg" alt="Cafe rating">
+        
+        <!-- Pricing Information -->
+        <p>
+            <!-- First Dollar Sign: Represents a medium price range -->
+            <span class="first-dollar">$</span><span class="second-dollar">$$</span>
+        </p>
+    </section>
+
+    <section class="repertoir">
+        <!-- Header for the section -->
+        <div class="header">
+            REPERTOIR
+        </div>
+    
+        <!-- Container for the movie cards -->
+        <div class="movies" id="movies-container"></div>
+    
+        <!-- Container for all the events -->
+        <div class="event-container">
+    
+            <!-- Event list that will contain all movie cards -->
+            <div class="event-list">
+
+<!-- Movie Card 1: ANORA -->
+<div class="event-card" 
+    data-title="ANORA" 
+    data-director="Sean Baker" 
+    data-description="Anora, directed by Sean Baker, is a 2024 romantic comedy-drama that blends humor with poignant social commentary. The film follows Anora, a Brooklyn exotic dancer, as she navigates an impulsive whirlwind romance with Ivan, the immature son of a Russian oligarch. Their spontaneous marriage quickly spirals into chaos when Ivan's powerful family intervenes. Combining screwball comedy with Baker's signature focus on marginalized characters, Anora is a heartfelt and stress-filled journey that transitions seamlessly between romance, comedy, and intense drama. The film highlights themes of power dynamics, independence, and the complexities of human relationships" 
+    data-image="../RESOURCES/anora.svg">
+
+    <!-- Movie image -->
+    <img src="../RESOURCES/anora.svg" alt="Anora">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">ANORA</h2>
+                <p class="director">dir. Sean Baker</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="Rating">
+            </div>
+        </div>
+
+        <div class="time-container">
+            <!-- Movie showtimes -->
+            <div class="time">11:00</div>
+            <div class="time">12:30</div>
+            <div class="time">13:40</div>
+            <div class="time">15:00</div>
+            <div class="time">17:30</div>
+            <div class="time">19:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Movie duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="Clock icon">
+                <p>106min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="Calendar icon">
+                <p>10 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>18.00zł</h2>
+        </div>
+    </div>
+</div>
+<!-- END OF ANORA CARD -->
+
+<!-- Movie Card 2: FLOW -->
+<div class="event-card" 
+    data-title="FLOW" 
+    data-director="Gints Zilbalodis" 
+    data-description="Flow, directed by Gints Zilbalodis, is a dialogue-free animated adventure following a cat and a group of animals surviving together on a boat after a catastrophic flood. Featuring stunning visuals and a powerful score, the film explores themes of unity and resilience. It has won multiple awards at festivals like Cannes and Annecy, further establishing Zilbalodis as a standout voice in animation" 
+    data-image="../RESOURCES/flow.svg">
+
+    <!-- Movie image -->
+    <img src="../RESOURCES/flow.svg" alt="Flow">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">FLOW</h2>
+                <p class="director">dir. Gints Zilbalodis</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="Rating">
+            </div>
+        </div>
+
+        <div class="time-container">
+            <!-- Movie showtimes -->
+            <div class="time">11:00</div>
+            <div class="time">13:00</div>
+            <div class="time">15:30</div>
+            <div class="time">17:40</div>
+            <div class="time">19:00</div>
+            <div class="time">21:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Movie duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="Clock icon">
+                <p>91min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="Calendar icon">
+                <p>11 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>18.00zł</h2>
+        </div>
+    </div>
+</div>
+<!-- END OF FLOW CARD -->
+
+<!-- Movie Card 3: BOYHOOD -->
+<div class="event-card" 
+    data-title="BOYHOOD" 
+    data-director="Richard Linklater" 
+    data-description="Boyhood, directed by Richard Linklater, is a groundbreaking coming-of-age film that follows the life of Mason, a young boy, from age six to eighteen. Filmed over 12 years with the same cast, the movie captures the subtle, evolving dynamics of family, relationships, and personal growth. Praised for its authenticity and emotional depth, Boyhood offers a unique cinematic experience, blending everyday moments into a profound narrative about growing up and finding one's place in the world." 
+    data-image="../RESOURCES/bhvsg.svg">
+
+    <!-- Movie image -->
+    <img src="../RESOURCES/bhvsg.svg" alt="Boyhood">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">BOYHOOD</h2>
+                <p class="director">dir. Richard Linklater</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="Rating">
+            </div>
+        </div>
+
+        <div class="time-container">
+            <!-- Movie showtimes -->
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Movie duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="Clock icon">
+                <p>165min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="Calendar icon">
+                <p>12 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>18.00zł</h2>
+        </div>
+    </div>
+</div>
+<!-- END OF BOYHOOD CARD -->
+
+<!-- Movie Card 1: WHIPLASH -->
+<div class="event-card" 
+    data-title="WHIPLASH" 
+    data-director="Damien Chazelle" 
+    data-description="Whiplash, directed by Damien Chazelle, is an intense drama about ambition, discipline, and the pursuit of greatness. The story follows Andrew Neiman, a young jazz drummer at a prestigious music conservatory, as he endures the relentless and abusive teaching methods of his instructor, Terence Fletcher. Their toxic dynamic explores the fine line between inspiration and obsession. Praised for its electrifying performances by Miles Teller and J.K. Simmons, the film is a gripping exploration of the sacrifices made for art and success." 
+    data-image="../RESOURCES/whiplashsvg.svg">
+
+    <!-- Movie image -->
+    <img src="../RESOURCES/whiplashsvg.svg" alt="Whiplash">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">WHIPLASH</h2>
+                <p class="director">dir. Damien Chazelle</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="rating">
+            </div>
+        </div>
+        <div class="time-container">
+            <!-- Movie showtimes -->
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+            <div class="time">12:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Movie duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="clock icon">
+                <p>106min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                <p>13 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>18.00zł</h2>
+        </div>
+    </div>
+</div>
+<!--END OF ONE CARD-->
+
+<!-- Movie Card 2: SHADOW -->
+<div class="event-card" 
+    data-title="SHADOW" 
+    data-director="Katarzyna Mazur" 
+    data-description="The Shadow exhibition by Katarzyna Mazur is hosted at Kino Żak from December 5, 2024, to January 5, 2025. This personal art collection explores the contrasts between the synthetic joy of the modern world and the raw loneliness that often lies beneath. Mazur's work invites the viewer to confront uncomfortable truths and emotions, often through the lens of human bodies, facial expressions, and subtle details that evoke a complex range of feelings. The exhibition blends deconstruction and distortion, challenging the viewer to reflect on the bitter-sweet aspects of contemporary life." 
+    data-image="../RESOURCES/shadow.svg">
+
+    <!-- Exhibition image -->
+    <img src="../RESOURCES/shadow.svg" alt="Shadow">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">SHADOW</h2>
+                <p class="director">by Katarzyna Mazur</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="rating">
+            </div>
+        </div>
+        <div class="time-container">
+            <!-- Exhibition times -->
+            <div class="time">11:00</div>
+            <div class="time">12:00</div>
+            <div class="time">13:00</div>
+            <div class="time">14:00</div>
+            <div class="time">15:00</div>
+            <div class="time">18:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Exhibition duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="clock icon">
+                <p>60min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                <p>14 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>18.00zł</h2>
+        </div>
+    </div>
+</div>
+<!--END OF ONE CARD-->
+
+<!-- Movie Card 3: TANATOS -->
+<div class="event-card" 
+    data-title="TANATOS" 
+    data-director="Kacper Biela" 
+    data-description="Tanatos by Kacper Biela is an exhibition held at Klub Żak, exploring the themes of death, existence, and the human experience. The works delve into philosophical reflections on mortality, symbolically representing the tension between life and death. Through a blend of contemporary art and thought-provoking visuals, Biela challenges viewers to confront these universal themes. The exhibition invites audiences to reflect on the transient nature of life while engaging with the artistic portrayal of death's influence on personal and collective identities." 
+    data-image="../RESOURCES/tanatos.svg">
+
+    <!-- Exhibition image -->
+    <img src="../RESOURCES/tanatos.svg" alt="Tanatos">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">TANATOS</h2>
+                <p class="director">by Kacper Biela</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="rating">
+            </div>
+        </div>
+        <div class="time-container">
+            <!-- Exhibition times -->
+            <div class="time">12:00</div>
+            <div class="time">13:00</div>
+            <div class="time">14:00</div>
+            <div class="time">15:00</div>
+            <div class="time">16:00</div>
+            <div class="time">18:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Exhibition duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="clock icon">
+                <p>60min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                <p>15 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>18.00zł</h2>
+        </div>
+    </div>
+</div>
+<!--END OF ONE CARD-->
+
+ <!-- Movie Card 4: CROSSING -->
+<div class="event-card" 
+data-title="BEKSIŃSKI" 
+data-director="Zdzisław Beksiński" 
+data-description="The Beksinski Art Gallery, dedicated to the works of the renowned Polish artist Zdzisław Beksiński, showcases his haunting and surreal creations. Known for his unsettling and dreamlike landscapes, Beksiński's art often explores themes of death, decay, and the subconscious. The gallery presents a diverse collection of his paintings, drawings, and photographs, reflecting his unique ability to blend horror with beauty in a deeply personal and evocative way. Visitors can experience the dark, dystopian worlds that made Beksiński one of the most influential figures in contemporary surrealist art." 
+data-image="../RESOURCES/beksinski.svg">
+
+<!-- Movie image -->
+<img src="../RESOURCES/beksinski.svg" alt="beksinski">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">BEKSIŃSKI</h2>
+            <p class="director">by Zdzisław Beksiński</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+    <div class="time-container">
+        <!-- Movie showtimes -->
+        <div class="time">12:00</div>
+        <div class="time">13:00</div>
+        <div class="time">15:00</div>
+        <div class="time">16:00</div>
+        <div class="time">18:00</div>
+        <div class="time">19:30</div>
+    </div>
+
+    <div class="movie-time-container">
+        <!-- Movie duration and date -->
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>60min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>16 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <!-- Button to get tickets -->
+        <button class="get-tickets">get tickets</button>
+        <h2>18.00zł</h2>
+    </div>
+</div>
+</div>
+<!--END OF ONE CARD-->
+
+ <!-- Movie Card 4: CROSSING -->
+ <div class="event-card" 
+ data-title="PRZYPŁYW" 
+ data-director="Małgorzata Staniel" 
+ data-description="Przypływ by Małgorzata Staniel is an art gallery that showcases the artist's captivating exploration of themes related to nature, emotion, and the human experience. The name Przypływ, meaning Tide in Polish, reflects the fluidity and movement that are central to Staniel's work. Known for her use of vibrant colors, organic forms, and intricate textures, her pieces evoke a sense of transition, connection, and reflection. The gallery offers a unique perspective on the interplay between the natural world and personal introspection, making it a compelling space for art lovers seeking both beauty and depth." 
+ data-image="../RESOURCES/przyplyw.svg">
+ 
+ <!-- Movie image -->
+ <img src="../RESOURCES/przyplyw.svg" alt="PRZYPLYW">
+ 
+ <div class="event-info">
+     <div class="title-container">
+         <div class="title-director">
+             <h2 class="title">PRZYPŁYW</h2>
+             <p class="director">by Małgorzata Staniel</p>
+         </div>
+         <div class="star-image">
+             <img src="../RESOURCES/stars.svg" alt="rating">
+         </div>
+     </div>
+     <div class="time-container">
+         <!-- Movie showtimes -->
+         <div class="time">12:00</div>
+         <div class="time">13:00</div>
+         <div class="time">15:00</div>
+         <div class="time">16:30</div>
+         <div class="time">18:00</div>
+         <div class="time">19:30</div>
+     </div>
+ 
+     <div class="movie-time-container">
+         <!-- Movie duration and date -->
+         <div class="movie-time">
+             <img src="../RESOURCES/clock.svg" alt="clock icon">
+             <p>60min</p>
+         </div>
+         <div class="movie-time">
+             <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+             <p>17 Dec 2024</p>
+         </div>
+     </div>
+ 
+     <div class="event-low">
+         <!-- Button to get tickets -->
+         <button class="get-tickets">get tickets</button>
+         <h2>18.00zł</h2>
+     </div>
+ </div>
+ </div>
+        </div>
+    </div>
+
+<!-- Popup Modal for showing more movie details -->
+<div id="popup-box" class="popup hidden">
+    <div class="popup-content">
+        <span id="close-popup" class="close">&times;</span>
+        <img id="popup-image" src="" alt="Movie Image">
+        <div class="popup-description">
+            <h2 id="popup-title"></h2>
+            <p id="popup-director" class="popup-director"></p>
+            <p id="popup-desc" class="popup-desc"></p>
+        </div>
+        <div class="popup-footer">
+            <span id="popup-price">18.00zł</span>
+            <button class="get-tickets-pop">get tickets</button>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<section class="menu">
+    <div class="menu-section">
+        <!-- Section heading for the menu -->
+        <h2>MENU</h2>
+
+        <!-- Menu container that holds all categories of items -->
+        <div class="menu-container">
+
+            <!-- Main courses category section -->
+            <details>
+                <summary class="menu-title">Main courses</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Daily special</strong> - ask the staff</span>
+                        <span class="dots"></span>
+                        <span class="price">9zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Daily soup</strong> - ask the staff</span>
+                        <span class="dots"></span>
+                        <span class="price">15zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Tomato soup</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">21zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Spaghetti Carbonara</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Spaghetti Arabbiata</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Spaghetti Alio e Olio</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Pierogi ruskie</strong> - potato filling</span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Pierogi ze szpinakiem</strong> - spinach filling</span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Pierogi z mięsem</strong> - pork filling</span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Tortilla with chicken</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Tortilla vege</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Chicken fillet</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Burgers category section -->
+            <details>
+                <summary class="menu-title">Burgers</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Beef burger</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">35zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Chicken burger</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">35zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Vege burger</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">35zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Salads category section -->
+            <details>
+                <summary class="menu-title">Salads</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Greek salad</strong> - with shrimps</span>
+                        <span class="dots"></span>
+                        <span class="price">30zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Chicken salad</strong> - with tomatoes</span>
+                        <span class="dots"></span>
+                        <span class="price">25zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Sides category section -->
+            <details>
+                <summary class="menu-title">Sides</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Camembert</strong> - with cranberries</span>
+                        <span class="dots"></span>
+                        <span class="price">15zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Fries</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">15zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Toast</strong> - with tomato and mozarella</span>
+                        <span class="dots"></span>
+                        <span class="price">15zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Bruschetta</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">15zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Drinks category section -->
+            <details>
+                <summary class="menu-title">Drinks</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Coffee</strong> (Espresso/Americano)</span>
+                        <span class="dots"></span>
+                        <span class="price">10zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Cappuccino</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">14zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Latte</strong> - with caramel</span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Soda</strong> (CocaCola/Sprite/Fanta)</span>
+                        <span class="dots"></span>
+                        <span class="price">8zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Tea</strong> (Fruit/Black/White)</span>
+                        <span class="dots"></span>
+                        <span class="price">8zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Alcohol category section -->
+            <details>
+                <summary class="last">Alcohol</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Beer</strong> (Tyskie/Żubr/Łomza)</span>
+                        <span class="dots"></span>
+                        <span class="price">15zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>4 shots</strong> (Krupnik/Bocian)</span>
+                        <span class="dots"></span>
+                        <span class="price">25zł</span>
+                    </li>
+                </ol>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+<section class="forum">
+    <div class="forum">
+        <!-- Forum section with the title -->
+        <h2 class="forum-title">FORUM</h2>
+
+        <!-- The initial post input area where users can type their comments -->
+        <div class="post">
+            <p>WHAT DO YOU THINK?</p>
+            <!-- Image representing a rating, can be replaced with actual interactive elements later -->
+            <img src="../RESOURCES/zerorating1.svg" alt="rating">
+        </div>
+
+        <!-- Textarea for users to input their thoughts -->
+        <textarea id="forum-text" class="forum-text" placeholder="Share your thoughts..."></textarea>
+        <!-- Button to publish the comment (JavaScript can handle the publishing action) -->
+        <button id="publish">Publish</button>
+
+        <!-- Comments Section - Holds all user comments -->
+        <div class="comments-container">
+            <!-- New comment (start) -->
+            <div class="comment">
+                <!-- User's profile picture -->
+                <img src="../RESOURCES/amelia.jpg" alt="profile picture" class="profile-pic">
+                <div class="comment-content">
+                    <!-- Commenter's name, review date, and location -->
+                    <div>
+                        <p class="name">Amelia Nowak</p>
+                        <p class="review-date">29.11.2024</p>
+                        <p class="location">Kino Żak</p>
+                    </div>
+                    <!-- Rating stars given by the user -->
+                    <div class="comment-rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                    </div>
+                    <!-- Comment text (review) -->
+                    <p class="comment-text">Just visited Kino Żak in Gdańsk and I’m blown away! 😍 Such a cozy spot with a unique vibe—perfect for indie film lovers. 🎥 The arthouse movie selection is top-notch, and their café is the ideal place to chill before the show. Highly recommend checking out their special events like the Jazz Jantar Festival. Definitely a hidden gem for culture enthusiasts! 🌟</p>
+                    <!-- 'See More' link to expand the comment -->
+                    <a href="javascript:void(0);" class="see-more">see more</a>
+                </div>
+            </div>
+            <!-- Finished comment (end) -->
+
+            <!-- Another new comment (start) -->
+            <div class="comment">
+                <img src="../RESOURCES/Morgan.jpeg" alt="profile picture" class="profile-pic">
+                <div class="comment-content">
+                    <div>
+                        <p class="name">Morgan Postman</p>
+                        <p class="review-date">16.11.2024</p>
+                        <p class="location">Kino Żak</p>
+                    </div>
+                    <div class="comment-rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="comment-text">Kino Żak is such a cool place for artsy movie fans! 🎬 The film selection is always interesting, and the atmosphere is great for a chill evening. The café adds a nice touch, but the seats could be a bit comfier. Overall, a great spot to catch something unique—definitely worth a visit.</p>
+                    <a href="javascript:void(0);" class="see-more">see more</a>
+                </div>
+            </div>
+            <!-- Finished comment (end) -->
+
+            <!-- Hidden comments section - Initially hidden but can be revealed (for example, through a button) -->
+            <div class="hidden-comments">
+                <div class="comment">
+                    <img src="../RESOURCES/emma.jpg" alt="profile picture" class="profile-pic">
+                    <div class="comment-content">
+                        <div>
+                            <p class="name">Emma Smith</p>
+                            <p class="review-date">09.11.2024</p>
+                            <p class="location">Kino Żak</p>
+                        </div>
+                        <div class="comment-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p class="comment-text">Kino Żak is such a great spot for a chill movie night! I love how they show indie films and host events like jazz concerts and festivals, so there's always something different going on. It’s not your typical cinema, which is super refreshing. The vibe is really laid-back, and it feels like a perfect place to relax with friends. Definitely a place I’d recommend if you're looking for something unique to do in Gdańsk.</p>
+                        <a href="javascript:void(0);" class="see-more">see more</a>
+                    </div>
+                </div>
+                <!-- More hidden comments can be added here -->
+            </div>
+
+            <!-- Button to see more posts (comments) -->
+            <p class="see-more-posts">see more</p>
+        </div>
+    </div>
+</section>
+
+<!-- Main content section with map -->
+<section class="info-container" id="tips">
+    <!-- Info Section -->
+    <h3 class="location-text">INFO</h3>
+    <div class="info">
+        <!-- Opening Hours -->
+        <h2 class="location-title">OPENING HOURS</h2>
+        <p>Monday/Friday: 12:00 - 22:00</p>
+        <p>Weekend: 10:00 - 22:00</p>
+
+        <!-- Location Address -->
+        <h2 class="location-title">LOCATION</h2>
+        <p>aleja Grunwaldzka 195/197, 80-266 Gdańsk, Polska</p>
+    </div>
+    
+    <!-- Map container (will be styled and filled with map content) -->
+    <div id="map" class="mapstyle"></div>
+</section>
+</main>
+
+<!-- Footer section containing navigation and newsletter -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo Section with links to home and log out -->
+        <div class="logo-section">
+            <h1 class="logo">CineHide</h1>
+            <a href="#" class="home-link">Home</a>
+            <a href="#" class="logout-link">Log out</a>
+        </div>
+        
+        <!-- Footer Navigation Links -->
+        <nav class="footer-nav">
+            <a href="#">PLACES TO VISIT</a>
+            <a href="#">UPCOMING EVENTS</a>
+            <a href="#">COMMUNITY</a>
+            <a href="#">PROFILE</a>
+            <a href="#">MAP</a>
+        </nav>
+
+        <!-- Newsletter Subscription Section -->
+        <div class="newsletter-section">
+            <p>Stay updated with the new events<br>with our <span class="highlight">NEWSLETTER!</span></p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</footer>
+
+<!-- External JavaScript Files (for additional functionality) -->
+    <script src="../nav.js"></script>
+  <script src="../map-zak.js"></script>
+  <script src="../footer.js"></script>
+  <script src="../see-more.js"></script>
+  <script src="../pop-up.js"></script>
+
+</body>
+</html>

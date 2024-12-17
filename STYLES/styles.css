@@ -1,0 +1,449 @@
+@import url(../STYLES/general.css);
+  
+/* ===============================
+   Header Section
+================================= */
+
+.navigation-container {
+  margin: 0;
+  padding: 16px 0;
+  position: relative; /* Ensures elements are positioned relative to this container */
+  background-color: white; /* White background for the header */
+}
+
+.link {
+  font: var(--font-style-header2);
+  color: var(--color-blue); /* Set text color to blue */
+  background-color: white; /* Set background to white */
+}
+
+.link:hover {
+  text-decoration: underline; /* Underline link text on hover */
+}
+
+.navigation {
+  border: none;
+  background-color: white;
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space out the items */
+  align-items: center; /* Vertically center items */
+  padding: 0 32px;
+  margin: 0;
+}
+
+.nav-logo {
+  font: var(--font-style-header2);
+  color: var(--color-blue); /* Blue logo text */
+  background-color: transparent;
+}
+
+.profile {
+  background-color: transparent; /* Transparent background for profile */
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+  display: flex;
+  flex-direction: column; /* Stack the burger lines vertically */
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.burger-menu .line {
+  width: 30px;
+  height: 4px;
+  background-color: var(--color-blue); /* Blue burger lines */
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.burger-menu.open .line:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 20px;
+}
+
+.burger-menu.open .line:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.burger-menu.open .line:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -8px;
+}
+
+/* Navigation Links */
+.navigation ul {
+  top: 0;
+  left: 0;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: none; /* Hide links by default */
+}
+
+.navigation ul.active {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  top: 65px; /* Adjust position below header */
+  left: 0;
+  background-color: white;
+  z-index: 1; /* Bring menu above other elements */
+}
+
+.navigation ul li {
+  padding: 0 25px;
+  margin: 16px 0;
+  text-align: left;
+  width: 100%;
+  list-style: none; /* Remove default bullet points */
+}
+
+/* Active Link Styles */
+.active-link {
+  font: var(--font-style-header2);
+  color: var(--color-red); /* Red color for active link */
+  text-decoration: underline;
+}
+
+.active-link-container {
+  margin: 0;
+  color: var(--color-red);
+  padding: 0;
+  width: 100%;
+  background-color: var(--color-red);
+}
+
+/* ===============================
+ Hero Section
+================================= */
+
+.hero {
+  height: 580px;
+  display: flex; /* Flexbox for horizontal layout */
+  flex-direction: row; /* Arrange children in a row */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space out the content */
+  padding: 2rem;
+  background: var(--color-light-grey); /* Light grey background */
+  text-align: left;
+  overflow: hidden; /* Hide overflow content */
+}
+
+.hero-text {
+  flex: 0 1 auto;
+  max-width: 700px; /* Limit text width */
+}
+
+.hero-text h1 {
+  font: var(--font-style-header1);
+  font-size: 64px; /* Large heading size */
+}
+
+.hero-text p {
+  font: var(--font-style-body-text);
+  font-size: 24px;
+}
+
+.hero-image {
+  margin-left: auto; /* Push image to the right */
+  position: relative;
+  overflow: hidden;
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+.hero .btn-primary {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-blue);
+  color: white;
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer;
+  height: 65px;
+  width: 343px;
+  font: var(--font-style-header2);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Subtle shadow */
+}
+
+/* ===============================
+ Info Section
+================================= */
+
+.info {
+  background: white;
+  max-height: 280px;
+  display: flex;
+}
+
+.info-text {
+  width: 60%;
+  font: var(--font-style-header1);
+  margin: auto 0;
+  padding: 1rem;
+}
+
+.info-image {
+  width: 40%;
+  object-fit: cover; /* Maintain aspect ratio while covering container */
+  overflow: hidden;
+}
+
+/* ===============================
+ discover Section
+================================= */
+
+.discover {
+  background-color: var(--color-light-grey);
+  max-width: 1440px;
+  margin: 80px auto; /* Center and add spacing */
+}
+
+.discover-header {
+  text-align: center;
+  font: var(--font-style-header1);
+}
+
+.discover-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap items if needed */
+  gap: 20px; /* Spacing between cards */
+  padding: 20px;
+}
+
+.discover-card {
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+  width: 300px; /* Fixed card width */
+}
+
+.discover-card img {
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+.discover-text {
+  font: var(--font-style-body-text);
+  margin-bottom: 10px;
+}
+
+.user-name {
+  font: var(--font-style-header2);
+}
+
+.discover-button {
+  padding: 1px 19.5px 6px 19.5px;
+  font: var(--font-style-body-text);
+  font-size: 20px;
+  color: var(--color-red);
+  border-radius: 30px;
+  border: 1px solid #C8153A; /* Red border */
+}
+
+.discover-button:hover {
+  background-color: var(--color-red);
+  color: white;
+  cursor: pointer;
+}
+
+/* ===============================
+ Map Section
+================================= */
+
+.map-container {
+  padding: 0;
+  text-align: center;
+  background-color: var(--color-light-grey); /* Optional background color */
+}
+
+.location-text {
+  margin: 25px;
+  font: var(--font-style-header1);
+}
+
+.mapstyle {
+  width: 100%; 
+  height: 400px; /* Keeps the map height consistent */
+}
+
+/* ===============================
+ Footer Section
+================================= */
+
+.footer {
+  background-color: var(--color-red);
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo-section {
+  color: var(--color-blue);
+  text-align: left;
+  flex: 1;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font: var(--font-style-header2);
+}
+
+.footer-nav a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  text-align: left;
+  flex: 1;
+}
+
+.newsletter-section p{
+  font: var(--font-style-body-text);
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-form input {
+  padding: 15px 20px;
+  border: none;
+  flex-grow: 1;
+  font: var(--font-style-body-lighttext);
+}
+
+.newsletter-form button {
+  font: var(--font-style-header2);
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--color-blue);
+  color: #fff;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: white;
+  color: var(--color-red);
+}
+
+/* Responsive Design for Screens Smaller than 768px */
+@media (max-width: 768px) {
+
+  /* HERO SECTION */
+  .hero {
+    flex-direction: column; /* Stack content vertically (image and text) */
+    align-items: center; /* Center-align everything */
+    text-align: center; /* Center the text */
+    padding: 0; /* Remove extra padding for a clean layout */
+  }
+
+  .hero-text {
+    order: 1; /* Place the text first */
+    margin-bottom: 0; /* Remove bottom spacing */
+    text-align: center; /* Align text to the center */
+    padding: 1rem; /* Add small padding for better spacing */
+  }
+
+  .hero-image {
+    order: 2; /* Place the image after the text */
+    margin: 0 auto; /* Center the image horizontally */
+    padding: 0; /* Remove padding */
+    width: 100%; /* Make the image full width */
+    height: 100vh; /* Make the image fill the entire viewport height */
+    overflow: hidden; /* Prevent content overflow */
+  }
+
+  .hero-image img {
+    position: relative; /* Standard positioning for the image */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    width: 100%; /* Make the image full width */
+    height: 100%; /* Make the image full height */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    object-position: top center; /* Align the top of the image to the center */
+    transform: scale(1); /* Keep the original scale */
+  }
+
+  .hero-text h1 {
+    font-size: 32px; /* Reduce heading size for smaller screens */
+  }
+
+  .hero-text p {
+    font-size: 18px; /* Reduce paragraph text size */
+  }
+
+  /* INFO SECTION */
+  .info {
+    flex-direction: row; /* Keep content (image and text) side-by-side */
+    height: 150px; /* Set a fixed height for consistency */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Center content horizontally */
+  }
+
+  .info-image {
+    width: 40%; /* Image takes up 40% of the container */
+    object-fit: contain; /* Ensure the image fits without distortion */
+  }
+
+  .info-text {
+    width: 60%; /* Text takes up 60% of the container */
+    text-align: center; /* Center-align the text */
+    font-size: 20px; /* Adjust font size for readability */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+
+  /* FOOTER SECTION */
+  .footer-container {
+    flex-direction: column; /* Stack footer content vertically */
+    align-items: center; /* Center-align all footer content */
+  }
+
+  .logo-section,
+  .footer-nav,
+  .newsletter-section {
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add spacing between footer sections */
+    width: 100%; /* Make each section full width */
+  }
+
+  .footer-nav a {
+    display: block; /* Stack links vertically */
+    margin: 5px 0; /* Add spacing between links */
+  }
+
+  /* NEWSLETTER FORM */
+  .newsletter-form {
+    flex-direction: column; /* Stack input and button vertically */
+    width: 100%; /* Make the form full width */
+  }
+
+  .newsletter-form input {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add spacing below input field */
+    width: 88%; /* Set the input field width */
+    font: var(--font-style-body-lighttext); /* Use body text styling */
+  }
+
+  .newsletter-form button {
+    width: 100%; /* Make the button full width */
+    font: var(--font-style-header2); /* Use header text styling */
+  }
+}

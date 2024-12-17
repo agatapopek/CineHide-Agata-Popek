@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page, seen in the browser tab -->
+    <title>Kino Kameralne Cafe</title>
+
+    <!-- Meta description for search engines and preview -->
+    <meta name="description" content="Discover the best small arthouse cinema cafes in Gdańsk, where you can enjoy underrated films and sip on delicious drinks. Explore each cafe's menu, engage with the community, and check out the latest movies playing all in one cozy, vibrant space.">
+    
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="../STYLES/cafe.css">
+
+    <!-- Link to external Leaflet library for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Link to Leaflet JavaScript library for map functionality -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+    <!-- Header section containing the navigation -->
+    <header class="navigation-container">
+        <nav class="navigation">
+
+            <!-- Burger menu for mobile responsiveness -->
+            <div class="burger-menu" id="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- Navigation links (Home, Places to Visit, Upcoming Events, Community) -->
+            <ul id="nav-links">
+                <li><a href="index.html" class="link">Home</a></li>
+                <li><a href="ticketvisit.html" class="link">Places to visit</a></li>
+                <li><a href="art-and-stories.html" class="link">Upcoming events</a></li>
+                <li><a href="about.html" class="link">Community</a></li>
+            </ul>
+
+            <!-- Logo that links back to the homepage -->
+            <a href="index.html" class="nav-logo">CineHide</a>
+
+            <!-- Profile icon, links to user profile page -->
+            <div class="profile">
+                <a href="profile.html">
+                    <img src="../resources/profile icon.svg" alt="Profile Icon" class="profile">
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+<main>
+
+<!-- Hero Section: Main introduction and social links -->
+<section class="hero">
+    <!-- Hero Text Block: Contains the main heading and social media links -->
+    <div class="hero-text">
+        <!-- Main Heading: Title of the section -->
+        <h1>Kino Kameralne Cafe</h1>
+  
+        <!-- Social Media Links: List of social media icons -->
+        <div class="social-icons">
+            <!-- Facebook Link -->
+            <a href="https://www.facebook.com/kinokameralnecafe/?locale=pl_PL" target="_blank" aria-label="Facebook">
+                <img src="../resources/FACEBOOK.svg" alt="Facebook Icon">
+            </a>
+  
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com/kino_kameralne_cafe/" target="_blank" aria-label="Instagram">
+                <img src="../resources/instagram.svg" alt="Instagram Icon">
+            </a>
+  
+            <!-- TikTok Link -->
+            <a href="https://www.tiktok.com/@kinokameralnecafe" target="_blank" aria-label="TikTok">
+                <img src="../resources/tiktok.svg" alt="TikTok Icon">
+            </a>
+  
+            <!-- Website Link -->
+            <a href="https://www.kinokameralnecafe.pl/" target="_blank" aria-label="Website">
+                <img src="../resources/web.svg" alt="Website Icon">
+            </a>
+        </div>
+    </div>
+  
+    <!-- Hero Image Block: Contains a responsive image for different screen sizes -->
+    <div class="hero-image">
+        <picture>
+            <!-- Mobile Image: Displayed on smaller screens (max-width: 768px) -->
+            <source srcset="../resources/kameralnemobile.svg" media="(max-width: 768px)">
+        
+            <!-- Default Image: Displayed on larger screens -->
+            <img src="../resources/elipsadesktopkameralne.svg" alt="Popcorn illustration">
+        </picture>
+    </div>
+</section>
+  
+<!-- Cafe Information Section: Displays ratings and pricing information -->
+<section class="cafe-info">
+    <!-- Crowd Rating Image -->
+    <img class="crowd" src="../RESOURCES/CROWD RATING.svg" alt="Crowd rating">
+    
+    <!-- Coffee Rating Image -->
+    <img class="cafe-rating" src="../RESOURCES/stars.svg" alt="Coffee rating">
+    
+    <!-- Pricing Information -->
+    <p>
+        <!-- First Dollar Sign: Represents a higher price range -->
+        <span class="first-dollar">$$$</span>
+    </p>
+</section>
+
+<section class="repertoir">
+    <!-- Header for the section -->
+    <div class="header">
+        REPERTOIR
+    </div>
+
+    <!-- Container for the movie cards -->
+    <div class="movies" id="movies-container"></div>
+
+    <!-- Container for all the events -->
+    <div class="event-container">
+
+        <!-- Event list that will contain all movie cards -->
+        <div class="event-list">
+
+<!-- Movie Card 1: MINGHUN -->
+<div class="event-card" 
+    data-title="MINGHUN" 
+    data-director="Jan P. Matuszyński" 
+    data-description="Minghun (2024) is a Polish drama directed by Jan P. Matuszyński. The story follows Jurek (Marcin Dorociński) and his father-in-law Ben (Daxing Zhang), who, after the death of Jurek's wife, decide to perform a traditional Chinese ritual called minghun (ghost marriage), where a deceased person is married posthumously. This journey explores themes of grief, cultural differences, and the search for meaning in life and death. The film reflects on universal human experiences, emphasizing that despite cultural differences, everyone shares a common humanity." 
+    data-image="../RESOURCES/minghun.svg">
+
+    <!-- Movie image -->
+    <img src="../RESOURCES/minghun.svg" alt="Minghun">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">MINGHUN</h2>
+                <p class="director">dir. Jan P. Matuszyński</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="rating">
+            </div>
+        </div>
+
+        <div class="time-container">
+            <!-- Movie showtimes -->
+            <div class="time">10:00</div>
+            <div class="time">11:40</div>
+            <div class="time">13:00</div>
+            <div class="time">14:30</div>
+            <div class="time">16:00</div>
+            <div class="time">18:30</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Movie duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="clock icon">
+                <p>90min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                <p>10 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>30.00zł</h2>
+        </div>
+    </div>
+</div>
+
+
+<!-- Movie Card 2: KNEECAP -->
+<div class="event-card" 
+data-title="KNEECAP" 
+data-director="Rich Peppiatt" 
+data-description="Kneecap (2024) is an irreverent biopic centered around the Belfast-based Irish rap trio Kneecap. Known for their provocative music, the film follows the group's rise to fame as outspoken advocates for the Irish language, often clashing with both cultural and political establishments. The band plays themselves, bringing a raw authenticity to the story, despite their lack of acting experience. The film is chaotic and filled with an anarchistic energy, reflecting the group's rebellious nature. Directed by Rich Peppiatt, it blends elements of comedy, drama, and music, exploring themes of language preservation and resistance. The film premiered at the Sundance Film Festival and has been well-received, though its frenetic pace and narrative choices have drawn mixed reactions." 
+data-image="../RESOURCES/flowfilm.svg">
+
+<!-- Movie image -->
+<img src="../RESOURCES/flowfilm.svg" alt="Kneecap">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">KNEECAP</h2>
+            <p class="director">dir. Rich Peppiatt</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <!-- Movie showtimes -->
+        <div class="time">10:00</div>
+        <div class="time">12:00</div>
+        <div class="time">14:30</div>
+        <div class="time">17:00</div>
+        <div class="time">18:00</div>
+        <div class="time">20:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <!-- Movie duration and date -->
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>105min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>11 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <!-- Button to get tickets -->
+        <button class="get-tickets">get tickets</button>
+        <h2>30.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 3: PLACEBO -->
+<div class="event-card" 
+data-title="PLACEBO" 
+data-director="Oscar Sansom" 
+data-description="Placebo: This Search for Meaning (2024) is a documentary directed by Oscar Sansom, exploring the ongoing impact and legacy of the British band Placebo. The film dives into themes such as surveillance culture, gender identity, addiction, trauma, and the climate crisis. It features brand-new interviews with band members Brian Molko and Stefan Olsdal, offering an intimate look at their creative process and personal struggles. The documentary provides a meditation on the band's music and its connection to contemporary societal issues." 
+data-image="../RESOURCES/placebo.svg">
+
+<!-- Movie image -->
+<img src="../RESOURCES/placebo.svg" alt="Placebo">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">PLACEBO</h2>
+            <p class="director">dir. Oscar Sansom</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <!-- Movie showtimes -->
+        <div class="time">10:30</div>
+        <div class="time">12:00</div>
+        <div class="time">14:20</div>
+        <div class="time">16:15</div>
+        <div class="time">18:00</div>
+        <div class="time">20:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <!-- Movie duration and date -->
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>106min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>12 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <!-- Button to get tickets -->
+        <button class="get-tickets">get tickets</button>
+        <h2>30.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 4: NIEUMARLI -->
+<div class="event-card" 
+data-title="NIEUMARLI" 
+data-director="Thea Hvistendahl" 
+data-description="Nieumarli (2024), directed by Thea Hvistendahl, is a Norwegian horror-drama film based on John Ajvide Lindqvist's novel Handling the Undead. The film explores a chilling event where, on a hot summer day in Oslo, the deceased inexplicably return to life. The story follows three families dealing with the emotional and existential chaos this phenomenon causes. It delves into grief, loss, and the complex human response to mortality, as characters grapple with the sudden reappearance of their deceased loved ones. The film features a cast led by Renate Reinsve, Anders Danielsen Lie, and Bahar Pars, among others. It had its world premiere at the 2024 Sundance Film Festival." 
+data-image="../RESOURCES/nieumarli.svg">
+
+<!-- Movie image -->
+<img src="../RESOURCES/nieumarli.svg" alt="Nieumarli">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">NIEUMARLI</h2>
+            <p class="director">dir. Thea Hvistendahl</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <!-- Movie showtimes -->
+        <div class="time">10:20</div>
+        <div class="time">12:00</div>
+        <div class="time">14:00</div>
+        <div class="time">16:00</div>
+        <div class="time">18:30</div>
+        <div class="time">20:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <!-- Movie duration and date -->
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>99min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>13 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <!-- Button to get tickets -->
+        <button class="get-tickets">get tickets</button>
+        <h2>30.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 5: HERETIC -->
+<div class="event-card" 
+data-title="HERETIC" 
+data-director="Scott Beck" 
+data-description="Heretic (2024) is a psychological horror film directed by Scott Beck and Bryan Woods. It follows two Mormon missionaries, Sisters Barnes and Paxton, who are trapped by a sinister figure, Mr. Reed, played by Hugh Grant, in a remote house. The film explores themes of faith, morality, and psychological torment as the women face twisted challenges. Chloe East's performance as Sister Paxton has been praised for its depth. The film builds tension with its claustrophobic setting and philosophical undercurrents." 
+data-image="../RESOURCES/heretic.svg">
+
+<!-- Movie image -->
+<img src="../RESOURCES/heretic.svg" alt="Heretic">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">HERETIC</h2>
+            <p class="director">dir. Scott Beck</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <!-- Movie showtimes -->
+        <div class="time">10:30</div>
+        <div class="time">11:50</div>
+        <div class="time">14:00</div>
+        <div class="time">16:40</div>
+        <div class="time">18:00</div>
+        <div class="time">20:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <!-- Movie duration and date -->
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>110min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>14 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <!-- Button to get tickets -->
+        <button class="get-tickets">get tickets</button>
+        <h2>30.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 6: ANISHORT -->
+<div class="event-card" 
+data-title="ANISHORT" 
+data-director="Multiple filmmakers" 
+data-description="Anishort is a celebration of the best short animated films from around the world, showcasing award-winning works from international festivals. This special event, held at Kino Kameralne Cafe in Gdańsk on December 18, 2024, marks the 10th anniversary of the festival. The screening will feature 18 animated films from 14 countries, varying in themes, genres, and animation techniques. Each film is about five minutes long, offering a diverse and engaging experience for the audience. After the screening, attendees can vote for their favorite film, which will receive the Audience Award for Best Film. The event is suitable for ages 15 and up and will be held in a friendly, English-accessible format." 
+data-image="../RESOURCES/anishort.svg">
+
+<!-- Movie image -->
+<img src="../RESOURCES/anishort.svg" alt="AniShort">
+
+<div class="event-info">
+    <div class="title-container">
+        <div class="title-director">
+            <h2 class="title">ANISHORT</h2>
+            <p class="director">dir. Multiple filmmakers</p>
+        </div>
+        <div class="star-image">
+            <img src="../RESOURCES/stars.svg" alt="rating">
+        </div>
+    </div>
+
+    <div class="time-container">
+        <!-- Movie showtimes -->
+        <div class="time">12:00</div>
+        <div class="time">13:00</div>
+        <div class="time">14:00</div>
+        <div class="time">15:00</div>
+        <div class="time">16:00</div>
+        <div class="time">17:00</div>
+    </div>
+
+    <div class="movie-time-container">
+        <!-- Movie duration and date -->
+        <div class="movie-time">
+            <img src="../RESOURCES/clock.svg" alt="clock icon">
+            <p>60min</p>
+        </div>
+        <div class="movie-time">
+            <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+            <p>15 Dec 2024</p>
+        </div>
+    </div>
+
+    <div class="event-low">
+        <!-- Button to get tickets -->
+        <button class="get-tickets">get tickets</button>
+        <h2>30.00zł</h2>
+    </div>
+</div>
+</div>
+
+<!-- Movie Card 7: MOVIE QUIZ -->
+<div class="event-card" 
+    data-title="MOVIE QUIZ" 
+    data-director="KKC" 
+    data-description="A movie quiz is a lively and interactive event designed to test participants' knowledge of cinema. Whether you're a casual viewer or a dedicated film buff, you'll enjoy answering questions about iconic movies, actors, directors, memorable quotes, soundtracks, and behind-the-scenes trivia. Quizzes often include rounds focusing on different genres, decades, or themes, creating a fun and competitive atmosphere. Some quizzes may incorporate visual or audio elements, such as identifying a scene or recognizing a soundtrack. Perfect for individuals or teams, a movie quiz is a great way to challenge yourself, celebrate your love for film, and enjoy a social activity with fellow enthusiasts." 
+    data-image="../RESOURCES/movie quiz.svg">
+
+    <!-- Movie image -->
+    <img src="../RESOURCES/movie quiz.svg" alt="Movie Quiz">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">MOVIE QUIZ</h2>
+                <p class="director">dir. KKC</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="rating">
+            </div>
+        </div>
+
+        <div class="time-container">
+            <!-- Movie showtimes -->
+            <div class="time">10:00</div>
+            <div class="time">11:00</div>
+            <div class="time">12:00</div>
+            <div class="time">13:00</div>
+            <div class="time">14:00</div>
+            <div class="time">15:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Movie duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="clock icon">
+                <p>60min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                <p>16 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>30.00zł</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Movie Card: ITALQUIZ -->
+<div class="event-card" 
+    data-title="ITALQUIZ" 
+    data-director="Levan Akin" 
+    data-description="Italquiz is an exciting quiz event dedicated to Italian cinema. Participants can test their knowledge of iconic Italian films, directors, actors, and unforgettable moments from the rich history of Italian filmmaking. From classic masterpieces to modern hits, the quiz covers a wide range of topics, offering a fun and interactive experience for movie lovers. Perfect for fans of Italian culture and cinema, Italquiz is a celebration of Italy's contribution to the world of film." 
+    data-image="../RESOURCES/italy.svg">
+
+    <!-- Movie image -->
+    <img src="../RESOURCES/italy.svg" alt="ItalQuiz">
+
+    <div class="event-info">
+        <div class="title-container">
+            <div class="title-director">
+                <h2 class="title">ITALQUIZ</h2>
+                <p class="director">dir. Levan Akin</p>
+            </div>
+            <div class="star-image">
+                <img src="../RESOURCES/stars.svg" alt="rating">
+            </div>
+        </div>
+
+        <div class="time-container">
+            <!-- Movie showtimes -->
+            <div class="time">10:00</div>
+            <div class="time">11:00</div>
+            <div class="time">12:00</div>
+            <div class="time">13:00</div>
+            <div class="time">14:00</div>
+            <div class="time">15:00</div>
+        </div>
+
+        <div class="movie-time-container">
+            <!-- Movie duration and date -->
+            <div class="movie-time">
+                <img src="../RESOURCES/clock.svg" alt="clock icon">
+                <p>60min</p>
+            </div>
+            <div class="movie-time">
+                <img src="../RESOURCES/calendar.svg" alt="calendar icon">
+                <p>17 Dec 2024</p>
+            </div>
+        </div>
+
+        <div class="event-low">
+            <!-- Button to get tickets -->
+            <button class="get-tickets">get tickets</button>
+            <h2>30.00zł</h2>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+ <!-- Popup Modal for showing more movie details -->
+ <div id="popup-box" class="popup hidden">
+    <div class="popup-content">
+        <span id="close-popup" class="close">&times;</span>
+        <img id="popup-image" src="" alt="Movie Image">
+        <div class="popup-description">
+            <h2 id="popup-title"></h2>
+            <p id="popup-director" class="popup-director"></p>
+            <p id="popup-desc" class="popup-desc"></p>
+        </div>
+        <div class="popup-footer">
+            <span id="popup-price">30.00zł</span>
+            <button class="get-tickets-pop">get tickets</button>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<section class="menu">
+    <div class="menu-section">
+        <!-- Section heading for the menu -->
+        <h2>MENU</h2>
+
+        <!-- Menu container that holds all categories of items -->
+        <div class="menu-container">
+
+            <!-- Snacks category section -->
+            <details>
+                <summary class="menu-title">Snacks</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Cake</strong> (Chocolate/Cheescake)</span>
+                        <span class="dots"></span>
+                        <span class="price">10zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Oatmeal cookie</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">10zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Salted peanuts</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">10zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Hot beverages category section -->
+            <details>
+                <summary class="menu-title">Hot beverages</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Espresso</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">12zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Doppio</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">14zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Americano</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">16zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Cappuccino</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Flat White</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">20zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Latte</strong> - with caramel syrup</span>
+                        <span class="dots"></span>
+                        <span class="price">21zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Tea</strong> (black/green/mint)</span>
+                        <span class="dots"></span>
+                        <span class="price">14zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Beer category section -->
+            <details>
+                <summary class="menu-title">Beer</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Lager</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">17zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Dark beer</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">17zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Wheat beer</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Sour beer</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">20zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Flavoured beer</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">20zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Aperitif category section -->
+            <details>
+                <summary class="menu-title">Aperitif</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Aperol</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">20zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Campari</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">20zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Martini bianco</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">22zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Martini rosso</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">22zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Martini extra dry</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">22zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Liqueurs category section -->
+            <details>
+                <summary class="menu-title">Liqueurs</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Jaggermeister</strong> (40ml)</span>
+                        <span class="dots"></span>
+                        <span class="price">20zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Sambuca</strong> (40ml)</span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Malibu</strong> (40ml)</span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Khalua</strong> (40ml)</span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Amaretto</strong> (40ml)</span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Baileys</strong> (40ml)</span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                </ol>
+            </details>
+
+            <!-- Soft drinks category section -->
+            <details>
+                <summary class="last">Soft drinks</summary>
+                <ol class="list">
+                    <li>
+                        <span class="drink-name"><strong>Coca-Cola</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">10zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Kinley Tonic</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">10zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>OnLemon</strong></span>
+                        <span class="dots"></span>
+                        <span class="price">18zł</span>
+                    </li>
+                    <li>
+                        <span class="drink-name"><strong>Juice</strong> (orange/apple)</span>
+                        <span class="dots"></span>
+                        <span class="price">20zł</span>
+                    </li>
+                </ol>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+<section class="forum">
+    <div class="forum">
+        <!-- Forum section with the title -->
+        <h2 class="forum-title">FORUM</h2>
+
+        <!-- The initial post input area where users can type their comments -->
+        <div class="post">
+            <p>WHAT DO YOU THINK?</p>
+            <!-- Image representing a rating, can be replaced with actual interactive elements later -->
+            <img src="../RESOURCES/zerorating1.svg" alt="rating">
+        </div>
+
+        <!-- Textarea for users to input their thoughts -->
+        <textarea id="forum-text" class="forum-text" placeholder="Share your thoughts..."></textarea>
+        <!-- Button to publish the comment (JavaScript can handle the publishing action) -->
+        <button id="publish">Publish</button>
+
+        <!-- Comments Section - Holds all user comments -->
+        <div class="comments-container">
+            <!-- New comment (start) -->
+            <div class="comment">
+                <!-- User's profile picture -->
+                <img src="../RESOURCES/chris.jpg" alt="profile picture" class="profile-pic">
+                <div class="comment-content">
+                    <!-- Commenter's name, review date, and location -->
+                    <div>
+                        <p class="name">Chris Cotepso</p>
+                        <p class="review-date">27.10.2024</p>
+                        <p class="location">Kino Kameralne Cafe</p>
+                    </div>
+                    <!-- Rating stars given by the user -->
+                    <div class="comment-rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <!-- Comment text (review) -->
+                    <p class="comment-text">Kino Kameralne Cafe has a cozy vibe and cool indie films, but it’s a bit hit-or-miss. The coffee’s decent, and the staff is friendly, though sometimes slow. Great for niche movie lovers, but not somewhere I’d go all the time.</p>
+                    <!-- 'See More' link to expand the comment -->
+                    <a href="javascript:void(0);" class="see-more">see more</a>
+                </div>
+            </div>
+            <!-- Finished comment (end) -->
+
+            <!-- Another new comment (start) -->
+            <div class="comment">
+                <img src="../RESOURCES/mark.avif" alt="profile picture" class="profile-pic">
+                <div class="comment-content">
+                    <div>
+                        <p class="name">Mark Gang</p>
+                        <p class="review-date">13.10.2024</p>
+                        <p class="location">Kino Kameralne Cafe</p>
+                    </div>
+                    <div class="comment-rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="comment-text">Kino Kameralne Cafe is a hidden gem for anyone who appreciates good films and a laid-back atmosphere. The selection of indie and arthouse movies is top-notch, and the cozy, intimate setting makes it feel like you're part of something special. The coffee is solid, and the staff is always welcoming. It’s not always the fastest service, but the vibe makes up for it. If you're into film culture, this place is definitely worth a visit. I’d give it a strong</p>
+                    <a href="javascript:void(0);" class="see-more">see more</a>
+                </div>
+            </div>
+            <!-- Finished comment (end) -->
+
+            <!-- Hidden comments section - Initially hidden but can be revealed (for example, through a button) -->
+            <div class="hidden-comments">
+                <div class="comment">
+                    <img src="../RESOURCES/annie.avif" alt="profile picture" class="profile-pic">
+                    <div class="comment-content">
+                        <div>
+                            <p class="name">Annie Lee</p>
+                            <p class="review-date">07.09.2024</p>
+                            <p class="location">Kino Kameralne Cafe</p>
+                        </div>
+                        <div class="comment-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p class="comment-text">Kino Kameralne Cafe has a lot of potential, but it’s not quite there yet. The atmosphere is cozy and unique, perfect for a quiet film experience. The coffee is fine, but nothing to rave about. The film selection is interesting, though some of the screenings can be a bit niche. Service can be slow, especially when it’s busy. Overall, it’s a nice spot but could use a little more consistency.</p>
+                        <a href="javascript:void(0);" class="see-more">see more</a>
+                    </div>
+                </div>
+                <!-- More hidden comments can be added here -->
+            </div>
+
+            <!-- Button to see more posts (comments) -->
+            <p class="see-more-posts">see more</p>
+        </div>
+    </div>
+</section>
+
+<!-- Main content section with map -->
+<section class="info-container" id="tips">
+    <!-- Info Section -->
+    <h3 class="location-text">INFO</h3>
+    <div class="info">
+        <!-- Opening Hours -->
+        <h2 class="location-title">OPENING HOURS</h2>
+        <p>Monday/Friday: 12:00 - 22:00</p>
+        <p>Weekend: 09:00 - 22:30</p>
+
+        <!-- Location Address -->
+        <h2 class="location-title">LOCATION</h2>
+        <p>Lektykarska 4, 80-831 Gdańsk, Polska</p>
+    </div>
+    
+    <!-- Map container (will be styled and filled with map content) -->
+    <div id="map" class="mapstyle"></div>
+</section>
+</main>
+
+<!-- Footer section containing navigation and newsletter -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo Section with links to home and log out -->
+        <div class="logo-section">
+            <h1 class="logo">CineHide</h1>
+            <a href="#" class="home-link">Home</a>
+            <a href="#" class="logout-link">Log out</a>
+        </div>
+        
+        <!-- Footer Navigation Links -->
+        <nav class="footer-nav">
+            <a href="#">PLACES TO VISIT</a>
+            <a href="#">UPCOMING EVENTS</a>
+            <a href="#">COMMUNITY</a>
+            <a href="#">PROFILE</a>
+            <a href="#">MAP</a>
+        </nav>
+
+        <!-- Newsletter Subscription Section -->
+        <div class="newsletter-section">
+            <p>Stay updated with the new events<br>with our <span class="highlight">NEWSLETTER!</span></p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</footer>
+
+<!-- External JavaScript Files (for additional functionality) -->
+    <script src="../nav.js"></script>
+    <script src="../map-kameralne.js"></script>
+    <script src="../footer.js"></script>
+    <script src="../see-more.js"></script>
+    <script src="../pop-up.js"></script>
+
+</body>
+</html>

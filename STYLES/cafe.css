@@ -655,6 +655,10 @@ border: 1px solid var(--color-red);
   margin: 5px 0;
 }
 
+.pages{
+  display: flex;
+  flex-direction: column;
+}
 /* Navigation */
 .footer-nav {
   display: inline;
@@ -895,6 +899,10 @@ cursor: pointer;
     text-align: center;
     margin-bottom: 20px;
     width: 100%;
+  }
+  .pages{
+    display: flex;
+    flex-direction: column;
   }
   
   .footer-nav a {

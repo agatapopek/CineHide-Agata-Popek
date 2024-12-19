@@ -416,7 +416,7 @@
     align-items: center; /* Center-align all footer content */
   }
 
-  .logo-section
+  .logo-section,
   .footer-nav,
   .newsletter-section {
     text-align: center; /* Center the text */

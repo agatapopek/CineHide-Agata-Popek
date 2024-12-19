@@ -297,6 +297,11 @@
   flex: 1;
 }
 
+.pages{
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-nav a {
   color: white;
   text-decoration: none;
@@ -422,6 +427,11 @@
     text-align: center; /* Center the text */
     margin-bottom: 20px; /* Add spacing between footer sections */
     width: 100%; /* Make each section full width */
+  }
+
+  .pages{
+    display: flex;
+    flex-direction: column;
   }
 
   .footer-nav a {
